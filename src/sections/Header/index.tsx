@@ -68,6 +68,7 @@ export const Header = () => {
         alt="Hero animation"
         src="/gifs/scooter.gif"
         className="absolute box-border max-w-full aspect-[auto_1350_/_1350] min-h-[600px] object-cover w-full z-0 left-1/2 -translate-x-1/2 top-[520px] md:w-6/12 md:top-[420px]"
+        loading="lazy"
       />
       <BackgroundImages
         alt="Clouds Hero"
@@ -93,13 +94,13 @@ export const Header = () => {
           <div className="relative box-border caret-transparent h-[500px] mt-[-300px] w-full">
             <div className="absolute box-border caret-transparent h-full w-full overflow-hidden bottom-[50px]">
               {/* Evenly spaced pumpies - slight gap, tucked behind cloud */}
-              <img alt="pumpies-1" src={selectedPumpies[0]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[6%] md:translate-y-[5%] md:w-[18%] z-[5]" />
-              <img alt="pumpies-2" src={selectedPumpies[1]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[20%] md:translate-y-[5%] md:w-[18%] z-[5]" />
-              <img alt="pumpies-3" src={selectedPumpies[2]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[34%] md:translate-y-[5%] md:w-[18%] z-[5]" />
-              <img alt="pumpies-4" src={selectedPumpies[3]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[12%] w-[20%] bottom-0 left-[48%] md:translate-y-[10%] md:w-[18%] z-[5]" />
-              <img alt="pumpies-5" src={selectedPumpies[4]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[62%] md:translate-y-[5%] md:w-[18%] z-[5]" />
-              <img alt="pumpies-6" src={selectedPumpies[5]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[76%] md:translate-y-[5%] md:w-[18%] z-[5]" />
-              <img alt="pumpies-7" src={selectedPumpies[6]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[90%] md:translate-y-[5%] md:w-[18%] z-[5]" />
+              <img alt="pumpies-1" src={selectedPumpies[0]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[6%] md:translate-y-[5%] md:w-[18%] z-[5]" loading="lazy" />
+              <img alt="pumpies-2" src={selectedPumpies[1]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[20%] md:translate-y-[5%] md:w-[18%] z-[5]" loading="lazy" />
+              <img alt="pumpies-3" src={selectedPumpies[2]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[34%] md:translate-y-[5%] md:w-[18%] z-[5]" loading="lazy" />
+              <img alt="pumpies-4" src={selectedPumpies[3]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[12%] w-[20%] bottom-0 left-[48%] md:translate-y-[10%] md:w-[18%] z-[5]" loading="lazy" />
+              <img alt="pumpies-5" src={selectedPumpies[4]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[62%] md:translate-y-[5%] md:w-[18%] z-[5]" loading="lazy" />
+              <img alt="pumpies-6" src={selectedPumpies[5]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[76%] md:translate-y-[5%] md:w-[18%] z-[5]" loading="lazy" />
+              <img alt="pumpies-7" src={selectedPumpies[6]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[90%] md:translate-y-[5%] md:w-[18%] z-[5]" loading="lazy" />
             </div>
             <img
               alt="welcome section lower clouds"
@@ -160,6 +161,7 @@ export const Header = () => {
                   alt="Content card character"
                   src="/gifs/content.gif"
                   className="text-transparent self-auto aspect-[auto_1350_/_1080] box-border h-fit mb-[-10%] max-w-full w-[55%] mx-auto md:self-center md:w-[40%] md:mr-[5%] md:mb-0"
+                  loading="lazy"
                 />
               </div>
               <h1 className="absolute text-2xl font-bold box-border caret-transparent leading-9 left-[2%] bottom-[7%] md:text-[34px] md:leading-[51px]">
@@ -203,6 +205,7 @@ export const Header = () => {
                     alt="Gaming card character"
                     src="/gifs/game.gif"
                     className="text-transparent self-auto aspect-[auto_1080_/_1920] box-border h-fit mb-[-10%] max-w-full w-[45%] mx-auto md:self-center md:w-[30%] md:mr-[5%] md:mb-0"
+                    loading="lazy"
                   />
                 </div>
                 <h1 className="absolute text-2xl font-bold box-border caret-transparent leading-9 left-[2%] bottom-[7%] md:text-[34px] md:leading-[51px]">
