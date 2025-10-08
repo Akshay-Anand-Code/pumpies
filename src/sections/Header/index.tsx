@@ -23,7 +23,7 @@ export const Header = () => {
       />
       <img
         alt="Hero animation"
-        src="/pictures/Scooter_pill.png"
+        src="/Scooter_pill.png"
         className="absolute box-border max-w-full aspect-[auto_1350_/_1350] min-h-[600px] object-cover w-full z-10 left-1/2 -translate-x-1/2 top-[520px] md:w-6/12 md:top-[420px]"
       />
       <BackgroundImages
@@ -112,7 +112,7 @@ export const Header = () => {
                 </div>
                 <img
                   alt="Content card character"
-                  src="/pictures/Pill_tear_drink.png"
+                  src="/Pill_tear_drink.png"
                   className="text-transparent self-auto aspect-[auto_1350_/_1080] box-border h-fit mb-[-10%] max-w-full w-[55%] mx-auto md:self-center md:w-[40%] md:mr-[5%] md:mb-0"
                 />
               </div>
@@ -155,7 +155,7 @@ export const Header = () => {
                   </div>
                   <img
                     alt="Gaming card character"
-                    src="/pictures/Navy_Pill.png"
+                    src="/Navy_Pill.png"
                     className="text-transparent self-auto aspect-[auto_1080_/_1920] box-border h-fit mb-[-10%] max-w-full w-[45%] mx-auto md:self-center md:w-[30%] md:mr-[5%] md:mb-0"
                   />
                 </div>
@@ -198,12 +198,12 @@ export const Header = () => {
               />
               <img
                 alt="Character left"
-                src="/pictures/Pizzas_pill.png"
+                src="/Pizzas_pill.png"
                 className="absolute text-transparent aspect-[auto_1080_/_1920] bottom-[-2%] box-border max-w-full translate-y-[27.7%] w-[17%] z-10 left-0 md:translate-y-[29.2%]"
               />
               <img
                 alt="Character right"
-                src="/pictures/Pills_birthday.png"
+                src="/Pills_birthday.png"
                 className="absolute text-transparent aspect-[auto_800_/_800] box-border max-w-full scale-x-[-1px] w-[23%] z-10 right-0 bottom-[60px]"
               />
               <div className="absolute box-border caret-transparent bottom-[100px]"></div>
@@ -228,20 +228,20 @@ export const Header = () => {
           <div className="[mask-image:radial-gradient(52%_5vw_at_50%_5vw,rgba(0,0,0,0)_calc(100%_-_2px),rgb(0,0,0))] box-border caret-transparent overflow-hidden mt-[2%] before:accent-auto before:bg-[linear-gradient(90deg,rgba(0,0,0,0.8),rgba(0,0,0,0))] before:box-border before:caret-transparent before:text-white before:block before:text-base before:not-italic before:normal-nums before:font-normal before:tracking-[normal] before:leading-6 before:list-outside before:list-disc before:absolute before:text-start before:indent-[0px] before:normal-case before:visible before:w-1/5 before:z-10 before:border-separate before:left-0 before:inset-y-0 before:font-font_74c027 after:accent-auto after:bg-[linear-gradient(270deg,rgba(0,0,0,0.8),rgba(0,0,0,0))] after:box-border after:caret-transparent after:text-white after:block after:text-base after:not-italic after:normal-nums after:font-normal after:tracking-[normal] after:leading-6 after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-1/5 after:border-separate after:right-0 after:inset-y-0 after:font-font_74c027">
             <div className="relative box-border caret-transparent flex translate-x-[132.5px] -ml-2.5 md:translate-x-[585px]">
               {/* pictures set x2 */}
-              <img alt="pic-1" src="/pictures/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-2" src="/pictures/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-3" src="/pictures/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-4" src="/pictures/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-5" src="/pictures/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-6" src="/pictures/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-7" src="/pictures/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-1b" src="/pictures/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-2b" src="/pictures/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-3b" src="/pictures/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-4b" src="/pictures/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-5b" src="/pictures/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-6b" src="/pictures/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-7b" src="/pictures/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-1" src="/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-2" src="/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-3" src="/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-4" src="/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-5" src="/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-6" src="/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-7" src="/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-1b" src="/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-2b" src="/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-3b" src="/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-4b" src="/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-5b" src="/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-6b" src="/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+              <img alt="pic-7b" src="/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
             </div>
           </div>
           <div className="items-center box-border caret-transparent flex w-fit m-auto">
