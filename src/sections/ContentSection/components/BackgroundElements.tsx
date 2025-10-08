@@ -32,14 +32,14 @@ export const BackgroundElements = () => {
         className="absolute text-transparent aspect-[auto_1920_/_173] bottom-[-15px] box-border max-w-full w-full z-10"
       />
       <img
-        alt="Gaming Card Background"
-        src="https://c.animaapp.com/mgg4tism1dKXdt/assets/84.gif"
-        className="absolute text-transparent aspect-[auto_1080_/_1920] bottom-[-2%] box-border max-w-full translate-y-[27.7%] w-[17%] z-10 left-0 md:translate-y-[29.2%]"
+        alt="Pumpies character left"
+        src="/images/Pizzas_pill.png"
+        className="absolute text-transparent aspect-[auto_1080_/_1920] bottom-[-2%] box-border max-w-full translate-y-[27.7%] w-[17%] z-10 left-0 md:translate-y-[29.2%] animate-bounce"
       />
       <img
-        alt="Gaming Card Background"
-        src="https://c.animaapp.com/mgg4tism1dKXdt/assets/78.gif"
-        className="absolute text-transparent aspect-[auto_800_/_800] box-border max-w-full scale-x-[-1px] w-[23%] z-10 right-0 bottom-[60px]"
+        alt="Pumpies character right"
+        src="/images/Pills_birthday.png"
+        className="absolute text-transparent aspect-[auto_800_/_800] box-border max-w-full scale-x-[-1px] w-[23%] z-10 right-0 bottom-[60px] animate-bounce"
       />
       <div className="absolute box-border caret-transparent bottom-[100px]"></div>
     </div>

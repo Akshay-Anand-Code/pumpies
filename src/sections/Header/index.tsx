@@ -1,8 +1,51 @@
+import { useMemo, useRef } from "react";
 import { HeroSection } from "@/sections/HeroSection";
 import { BackgroundImages } from "@/sections/Header/components/BackgroundImages";
+import { ScrollTransition } from "@/components/ScrollTransition";
+ 
  
 
 export const Header = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // pick 5 unique pumpies once per load (no repeats)
+  const selectedPumpies = useMemo(() => {
+    const allImages = [
+      "/images/Scooter_pill.png",
+      "/images/Pill_tear_drink.png",
+      "/images/Navy_Pill.png",
+      "/images/Pills_birthday.png",
+      "/images/Pizzas_pill.png",
+      "/images/IMG_2198-removebg-preview.png",
+      "/images/radio.png",
+      "/images/rich.png",
+      "/images/money.png",
+      "/images/book.png",
+      "/images/moneybag.png",
+    ];
+    const pool = [...allImages];
+    const pick: string[] = [];
+    for (let i = 0; i < 7 && pool.length; i++) {
+      const idx = Math.floor(Math.random() * pool.length);
+      pick.push(pool.splice(idx, 1)[0]);
+    }
+    return pick;
+  }, []);
+
+  const scrollLeft = () => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const step = Math.max(300, Math.floor(el.clientWidth * 0.8));
+    el.scrollLeft = el.scrollLeft - step;
+  };
+
+  const scrollRight = () => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const step = Math.max(300, Math.floor(el.clientWidth * 0.8));
+    el.scrollLeft = el.scrollLeft + step;
+  };
+  
   return (
     <div className="relative box-border caret-transparent">
       <HeroSection />
@@ -23,8 +66,8 @@ export const Header = () => {
       />
       <img
         alt="Hero animation"
-        src="/Scooter_pill.png"
-        className="absolute box-border max-w-full aspect-[auto_1350_/_1350] min-h-[600px] object-cover w-full z-10 left-1/2 -translate-x-1/2 top-[520px] md:w-6/12 md:top-[420px]"
+        src="/gifs/scooter.gif"
+        className="absolute box-border max-w-full aspect-[auto_1350_/_1350] min-h-[600px] object-cover w-full z-0 left-1/2 -translate-x-1/2 top-[520px] md:w-6/12 md:top-[420px]"
       />
       <BackgroundImages
         alt="Clouds Hero"
@@ -49,16 +92,19 @@ export const Header = () => {
           />
           <div className="relative box-border caret-transparent h-[500px] mt-[-300px] w-full">
             <div className="absolute box-border caret-transparent h-full w-full overflow-hidden bottom-[50px]">
-              <img
-                alt="welcome section bonkz"
-                src="https://c.animaapp.com/mgg4tism1dKXdt/assets/38.png"
-                className="absolute text-transparent aspect-[auto_1919_/_416] box-border mt-[-300px] max-w-full min-h-[100px] min-w-[900px] translate-y-[25.0%] w-full bottom-2.5 md:translate-y-[15.0%]"
-              />
+              {/* Evenly spaced pumpies - slight gap, tucked behind cloud */}
+              <img alt="pumpies-1" src={selectedPumpies[0]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[6%] md:translate-y-[5%] md:w-[18%] z-[5]" />
+              <img alt="pumpies-2" src={selectedPumpies[1]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[20%] md:translate-y-[5%] md:w-[18%] z-[5]" />
+              <img alt="pumpies-3" src={selectedPumpies[2]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[34%] md:translate-y-[5%] md:w-[18%] z-[5]" />
+              <img alt="pumpies-4" src={selectedPumpies[3]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[12%] w-[20%] bottom-0 left-[48%] md:translate-y-[10%] md:w-[18%] z-[5]" />
+              <img alt="pumpies-5" src={selectedPumpies[4]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[62%] md:translate-y-[5%] md:w-[18%] z-[5]" />
+              <img alt="pumpies-6" src={selectedPumpies[5]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[76%] md:translate-y-[5%] md:w-[18%] z-[5]" />
+              <img alt="pumpies-7" src={selectedPumpies[6]} className="absolute text-transparent box-border mt-[-300px] max-w-full min-h-[120px] min-w-[220px] translate-y-[7%] w-[20%] bottom-0 left-[90%] md:translate-y-[5%] md:w-[18%] z-[5]" />
             </div>
             <img
               alt="welcome section lower clouds"
               src="https://c.animaapp.com/mgg4tism1dKXdt/assets/32.png"
-              className="absolute text-transparent aspect-[auto_1920_/_258] box-border max-w-full min-h-[200px] min-w-[1100px] w-full bottom-0"
+              className="absolute text-transparent aspect-[auto_1920_/_258] box-border max-w-full min-h-[200px] min-w-[1100px] w-full bottom-0 z-10"
             />
           </div>
         </div>
@@ -112,7 +158,7 @@ export const Header = () => {
                 </div>
                 <img
                   alt="Content card character"
-                  src="/Pill_tear_drink.png"
+                  src="/gifs/content.gif"
                   className="text-transparent self-auto aspect-[auto_1350_/_1080] box-border h-fit mb-[-10%] max-w-full w-[55%] mx-auto md:self-center md:w-[40%] md:mr-[5%] md:mb-0"
                 />
               </div>
@@ -155,7 +201,7 @@ export const Header = () => {
                   </div>
                   <img
                     alt="Gaming card character"
-                    src="/Navy_Pill.png"
+                    src="/gifs/game.gif"
                     className="text-transparent self-auto aspect-[auto_1080_/_1920] box-border h-fit mb-[-10%] max-w-full w-[45%] mx-auto md:self-center md:w-[30%] md:mr-[5%] md:mb-0"
                   />
                 </div>
@@ -198,13 +244,13 @@ export const Header = () => {
               />
               <img
                 alt="Character left"
-                src="/Pizzas_pill.png"
+                src="/images/Pizzas_pill.png"
                 className="absolute text-transparent aspect-[auto_1080_/_1920] bottom-[-2%] box-border max-w-full translate-y-[27.7%] w-[17%] z-10 left-0 md:translate-y-[29.2%]"
               />
               <img
                 alt="Character right"
-                src="/Pills_birthday.png"
-                className="absolute text-transparent aspect-[auto_800_/_800] box-border max-w-full scale-x-[-1px] w-[23%] z-10 right-0 bottom-[60px]"
+                src="/images/Pills_birthday.png"
+                className="absolute text-transparent aspect-[auto_800_/_800] box-border max-w-full scale-x-[-1px] w-[23%] z-0 right-0 bottom-[60px]"
               />
               <div className="absolute box-border caret-transparent bottom-[100px]"></div>
             </div>
@@ -212,7 +258,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="box-border caret-transparent mt-[10%] mb-[200px]">
+      <div className="box-border caret-transparent mt-[10%] mb-[200px] relative z-10">
         <h1 className="text-yellow-50 text-[49px] font-bold box-border caret-transparent leading-[73.5px] text-center w-full mt-5 md:text-[100px] md:leading-[150px]">
           1/1 Artists
         </h1>
@@ -226,28 +272,39 @@ export const Header = () => {
         </p>
         <section className="text-white box-border caret-transparent w-full">
           <div className="[mask-image:radial-gradient(52%_5vw_at_50%_5vw,rgba(0,0,0,0)_calc(100%_-_2px),rgb(0,0,0))] box-border caret-transparent overflow-hidden mt-[2%] before:accent-auto before:bg-[linear-gradient(90deg,rgba(0,0,0,0.8),rgba(0,0,0,0))] before:box-border before:caret-transparent before:text-white before:block before:text-base before:not-italic before:normal-nums before:font-normal before:tracking-[normal] before:leading-6 before:list-outside before:list-disc before:absolute before:text-start before:indent-[0px] before:normal-case before:visible before:w-1/5 before:z-10 before:border-separate before:left-0 before:inset-y-0 before:font-font_74c027 after:accent-auto after:bg-[linear-gradient(270deg,rgba(0,0,0,0.8),rgba(0,0,0,0))] after:box-border after:caret-transparent after:text-white after:block after:text-base after:not-italic after:normal-nums after:font-normal after:tracking-[normal] after:leading-6 after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-1/5 after:border-separate after:right-0 after:inset-y-0 after:font-font_74c027">
-            <div className="relative box-border caret-transparent flex translate-x-[132.5px] -ml-2.5 md:translate-x-[585px]">
-              {/* pictures set x2 */}
-              <img alt="pic-1" src="/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-2" src="/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-3" src="/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-4" src="/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-5" src="/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-6" src="/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-7" src="/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-1b" src="/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-2b" src="/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-3b" src="/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-4b" src="/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-5b" src="/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-6b" src="/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
-              <img alt="pic-7b" src="/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[5%] pl-2.5" />
+            <div ref={scrollContainerRef} className="relative box-border caret-transparent flex -ml-2.5 overflow-x-auto scrollbar-hide snap-x snap-mandatory" style={{scrollBehavior: 'auto'}}>
+              {/* All images including new ones - scrollable strip */}
+              <img alt="pic-1" src="/images/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-2" src="/images/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-3" src="/images/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-4" src="/images/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-5" src="/images/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-6" src="/images/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-7" src="/images/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-8" src="/images/radio.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-9" src="/images/rich.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-10" src="/images/money.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-11" src="/images/book.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-12" src="/images/moneybag.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5 snap-start" loading="lazy" />
+              <img alt="pic-13" src="/images/Scooter_pill.png" className="text-transparent aspect-[auto_2048_/_2048] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-14" src="/images/Pill_tear_drink.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-15" src="/images/Navy_Pill.png" className="text-transparent aspect-[auto_1200_/_1200] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-16" src="/images/Pills_birthday.png" className="text-transparent aspect-[auto_2560_/_2560] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-17" src="/images/Pizzas_pill.png" className="text-transparent aspect-[auto_2000_/_2000] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-18" src="/images/IMG_2198-removebg-preview.png" className="text-transparent aspect-[auto_1280_/_1280] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-19" src="/images/2.JPG" className="text-transparent aspect-[auto_1199_/_838] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-20" src="/images/radio.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-21" src="/images/rich.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-22" src="/images/money.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-23" src="/images/book.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
+              <img alt="pic-24" src="/images/moneybag.png" className="text-transparent aspect-[auto_1_/_1] box-border basis-[100px] shrink-0 h-[600px] max-w-full object-cover w-[200px] pl-2.5" />
             </div>
           </div>
           <div className="items-center box-border caret-transparent flex w-fit m-auto">
             <button
               type="button"
-              className="items-center bg-transparent caret-transparent flex h-[57.6px] justify-center text-center w-[57.6px] z-[1] p-0 rounded-[50%]"
+              onClick={scrollLeft}
+              className="items-center bg-transparent caret-transparent flex h-[57.6px] justify-center text-center w-[57.6px] z-[1] p-0 rounded-[50%] hover:bg-gray-800 transition-colors"
             >
               <img
                 src="https://c.animaapp.com/mgg4tism1dKXdt/assets/icon-1.svg"
@@ -255,10 +312,10 @@ export const Header = () => {
                 className="box-border caret-transparent h-[45%] w-[45%]"
               />
             </button>
-            <p className="font-[510] box-border caret-transparent">Ryanednan</p>
             <button
               type="button"
-              className="items-center bg-transparent caret-transparent flex h-[57.6px] justify-center text-center w-[57.6px] z-[1] p-0 rounded-[50%]"
+              onClick={scrollRight}
+              className="items-center bg-transparent caret-transparent flex h-[57.6px] justify-center text-center w-[57.6px] z-[1] p-0 rounded-[50%] hover:bg-gray-800 transition-colors"
             >
               <img
                 src="https://c.animaapp.com/mgg4tism1dKXdt/assets/icon-2.svg"
@@ -269,14 +326,15 @@ export const Header = () => {
           </div>
         </section>
       </div>
-      <div className="relative box-border caret-transparent h-[5000px]">
+      <div className="relative box-border caret-transparent z-10">
         <div className="absolute box-border caret-transparent h-px w-full top-[150px]"></div>
         <div className="relative box-border caret-transparent w-full my-[150px]">
-          <div className="items-center bg-pink-300 box-border caret-transparent flex h-[100px] ml-[-5%] w-[150%] overflow-hidden md:h-[200px]">
-            <p className="text-[39px] font-[510] box-border caret-transparent leading-[58.5px] text-nowrap md:text-[100px] md:leading-[150px]">
+          <div className="items-center bg-pink-300 box-border caret-transparent flex h-[100px] ml-[-5%] w-[150%] overflow-hidden md:h-[200px] transform -skew-y-1">
+            <p className="text-[39px] font-[510] box-border caret-transparent leading-[58.5px] text-nowrap md:text-[100px] md:leading-[150px] animate-[scroll_20s_linear_infinite]">
               TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM
               TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM
-              TEAM TEAM TEAM TEAM TEAM TEAM
+              TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM
+              TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM
             </p>
           </div>
           <div className="box-border caret-transparent flex flex-col h-auto justify-around w-[70%] mt-[200px] mx-auto md:flex-row md:h-[600px] md:w-4/5">
@@ -341,6 +399,10 @@ export const Header = () => {
           </div>
           <div className="box-border caret-transparent h-px w-full mt-[150px]"></div>
         </div>
+
+        {/* Scroll-triggered transition to burn page */}
+        <ScrollTransition />
+
         <div className="relative bg-yellow-200 box-border caret-transparent hidden h-[1000px] w-screen overflow-hidden">
           <div className="box-border caret-transparent h-full w-full">
             <img
